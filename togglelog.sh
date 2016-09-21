@@ -8,10 +8,10 @@ if [ "$line_count" -gt "2" ]; then
   adb pull /system/etc/bluetooth/bt_stack.conf
 
   if [ "$log_enabled" ]; then
-    sed -i 's/BtSnoopLogOutput=true/BtSnoopLogOutput=false/g' bt_stack.conf
+    sed -ig 's/BtSnoopLogOutput=true/BtSnoopLogOutput=false/' bt_stack.conf
     log_enabled=0
   else
-    sed -i 's/BtSnoopLogOutput=false/BtSnoopLogOutput=true/g' bt_stack.conf
+    sed -ig 's/BtSnoopLogOutput=false/BtSnoopLogOutput=true/' bt_stack.conf
     log_enabled=1;
   fi
 
